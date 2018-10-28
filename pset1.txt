@@ -1,0 +1,20 @@
+PLAN FOR: cpyProps
+
+o = {
+  'a': 1,
+  'b': 2,
+  'c': 3,
+}
+
+p = {}
+keys = Object.keys(o); // ['a', 'b', 'c']
+
+p[keys[0]] = 1 => o[keys[0]]
+p[keys[0] + '_cpy'] = 1 => o[keys[0]]
+
+
+p[keys[1]] = 2 => o[keys[1]]
+p[keys[1] + '_cpy'] = 2 => o[keys[1]]
+
+p[keys[2]] = 3 => o[keys[2]]
+p[keys[2] + '_cpy'] = 3 => o[keys[2]]

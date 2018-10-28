@@ -1,0 +1,15 @@
+const obj = {
+    'name': 1,
+    'age': 2,
+    'title': 3,
+}
+const obj_cpy = {}
+const foobar = Object.keys(obj); // ['name', 'age', 'title']
+
+for (let i = 0; i < foobar.length; i++) {
+    obj_cpy[foobar[i]] = obj[foobar[i]]  
+}
+
+obj_cpy[foobar[0]] = obj[foobar[0]]
+obj_cpy[foobar[1]] = obj[foobar[1]]
+obj_cpy[foobar[2]] = obj[foobar[2]]

@@ -1,0 +1,91 @@
+const obj1 = {
+  'a': 1,
+  'b': 2,
+  'c': 3,
+}
+const obj2 = {
+  'd': 1,
+  'e': 1,
+  'f': 1,
+  'a': 0,
+}
+
+p = {}
+keys = Object.keys(obj1);
+
+p[keys[0]] = 1 => obj1[keys[0]]
+p['b'] = 2 => obj1['b']
+p['c'] = 3 => obj1['c']
+
+keys2 = Object.keys(obj2);
+p[keys2[0]] = 1 => obj2[keys2[0]]
+p['e'] = 1 => obj2['e']
+p['f'] = 1 => obj2['f']
+p['a'] = 0 => obj2['a']
+
+========================================
+/*
+
+const objs = [obj1, obj2];
+// loop through the array of TWO objects
+for (let i = 0; i < objs.length; i++) {
+    const currentObj = objs[i];
+
+    const keys = Object.keys(currentObj);
+    for (let j = 0; j < keys.length; j++) {
+        const currentKey = keys[j];
+        sumObj[currentKey] = currentObj[currentKey];
+    }
+}
+*/
+objs = [{'a': 1, 'd': 1}, {'b': 2, 'e': 2}];
+
+i   | objs[i]                       | Object.keys(obj[i])
+---------------------------------------------
+0     objs[0] = {'a': 1, 'd': 1}    | ['a', 'd']
+---------------------------------------------
+1     objs[1] = {'b': 2, 'e': 2}    | ['b', 'e']
+
+i   |   j   | other crap
+--------------------------------
+0   |   0   | keys[j] = keys[0] = 'a' => currentKey
+              objs[i] = objs[0] = {'a': 1, 'd': 1} => currentObj
+              sumObj[currentKey] => sumObj['a']
+              currentObj[currentKey] => {'a': 1, 'd': 1}['a'] => 1
+              sumObj (so far) => {'a': 1}
+--------------------------------
+0   |   1   | keys[j] = keys[1] = 'd' => currentKey
+              objs[i] = objs[0] = {'a': 1, 'd': 1} => currentObj
+              sumObj[currentKey] => sumObj['d']
+              currentObj[currentKey] => {'a': 1, 'd': 1}['d'] => 1
+              sumObj (so far) => {'a': 1, 'd': 1}
+--------------------------------
+1   |   0   | keys[j] = keys[0] = 'b' => currentKey
+              objs[i] = objs[1] = {'b': 2, 'e': 2} => currentObj
+              sumObj[currentKey] => sumObj['b']
+              currentObj[currentKey] => {'b': 2, 'e': 2}['b'] => 2
+              sumObj (so far) => {'a': 1, 'd': 1, 'b': 2}
+--------------------------------
+1   |   1   | keys[j] = keys[1] = 'e' => currentKey
+              objs[i] = objs[1] = {'b': 2, 'e': 2} => currentObj
+              sumObj[currentKey] => sumObj['e']
+              currentObj[currentKey] => {'b': 2, 'e': 2}['e'] => 2
+              sumObj (so far) => {'a': 1, 'd': 1, 'b': 2, 'e': 2}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
